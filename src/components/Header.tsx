@@ -87,130 +87,113 @@ export function Header() {
 
   return (
     <>
-      <div className="fixed inset-x-0 top-11 z-50 px-3 pt-3 sm:pt-4">
-        <header
+      <header
+        className={cn(
+          "fixed inset-x-0 top-11 z-50 border-b border-border/60 bg-background transition-all duration-300",
+          scrolled ? "shadow-sm backdrop-blur-md bg-background/95" : "",
+        )}
+      >
+        <div
           className={cn(
-            "mx-auto w-full max-w-7xl rounded-2xl border transition-all duration-500",
-            scrolled
-              ? "glass border-white/40 shadow-[var(--shadow-glass)] backdrop-blur-xl"
-              : "border-transparent bg-background/70 backdrop-blur-md",
+            "flex w-full items-center gap-5 pl-[30px] pr-6 transition-all duration-300 sm:gap-8",
+            scrolled ? "h-[70px] sm:h-[74px]" : "h-[70px] sm:h-[86px]",
           )}
         >
-          <div
-            className={cn(
-              "grid grid-cols-[auto_auto_minmax(0,1fr)_auto] items-center gap-3 px-3 transition-all duration-500 sm:gap-5 sm:px-5",
-              scrolled ? "py-2" : "py-3",
-            )}
+          {/* Hamburger */}
+          <button
+            type="button"
+            aria-label={drawerOpen ? "Close menu" : "Open menu"}
+            aria-expanded={drawerOpen}
+            onClick={() => setDrawerOpen((v) => !v)}
+            className="grid shrink-0 place-items-center rounded-md p-1 text-foreground transition-colors hover:bg-accent"
           >
-            {/* Hamburger */}
-            <button
-              type="button"
-              aria-label={drawerOpen ? "Close menu" : "Open menu"}
-              aria-expanded={drawerOpen}
-              onClick={() => setDrawerOpen((v) => !v)}
-              className="group grid h-11 w-11 shrink-0 place-items-center rounded-full border border-border/60 bg-background/80 transition-all hover:border-gold hover:bg-accent"
-            >
-              {drawerOpen ? (
-                <X className="h-5 w-5 transition-transform duration-300" />
-              ) : (
-                <Menu className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
-              )}
-            </button>
+            {drawerOpen ? (
+              <X className="h-7 w-7 sm:h-8 sm:w-8" strokeWidth={1.75} />
+            ) : (
+              <Menu className="h-7 w-7 sm:h-8 sm:w-8" strokeWidth={1.75} />
+            )}
+          </button>
 
-            {/* Logo */}
-            <Link to="/" className="flex min-w-0 items-center gap-2 sm:gap-3">
-              <img
-                src={logo}
-                alt="Wood Lab Islamabad logo"
+          {/* Logo */}
+          <Link to="/" className="flex shrink-0 items-center" aria-label="Wood Lab home">
+            <img
+              src={logo}
+              alt="Wood Lab Islamabad logo"
+              className={cn(
+                "w-auto object-contain transition-all duration-300",
+                scrolled ? "h-[42px] sm:h-[46px]" : "h-[45px] sm:h-[52px]",
+              )}
+            />
+          </Link>
+
+          {/* Search */}
+          <div ref={searchWrapRef} className="relative ml-2 min-w-0 flex-1 sm:ml-4">
+            <form onSubmit={handleSubmit} className="relative">
+              <Search
+                className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
+                aria-hidden
+              />
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onFocus={() => setFocused(true)}
+                onKeyDown={onKeyDownSearch}
+                placeholder="Search kitchens, wardrobes, doors, furniture..."
+                aria-label="Search the site"
                 className={cn(
-                  "shrink-0 rounded-full object-contain transition-all duration-500",
-                  scrolled ? "h-10 w-10 sm:h-11 sm:w-11" : "h-12 w-12 sm:h-14 sm:w-14",
+                  "h-11 w-full rounded-full border border-border bg-background pl-11 pr-4 font-body text-sm text-foreground shadow-sm placeholder:text-muted-foreground/70 transition-all sm:h-12",
+                  "focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30",
                 )}
               />
-              <span className="hidden min-w-0 flex-col leading-tight sm:flex">
-                <span className="truncate font-display text-base font-semibold sm:text-lg">
-                  Wood Lab
-                </span>
-                <span className="truncate text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
-                  Islamabad
-                </span>
-              </span>
-            </Link>
+            </form>
 
-            {/* Search */}
-            <div ref={searchWrapRef} className="relative min-w-0">
-              <form onSubmit={handleSubmit} className="relative">
-                <Search
-                  className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
-                  aria-hidden
-                />
-                <input
-                  type="search"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  onFocus={() => setFocused(true)}
-                  onKeyDown={onKeyDownSearch}
-                  placeholder="Search kitchens, wardrobes, doors, furniture..."
-                  aria-label="Search the site"
-                  className={cn(
-                    "w-full rounded-full border border-border/60 bg-background pl-10 pr-4 font-body text-sm text-foreground placeholder:text-muted-foreground/70 shadow-sm transition-all",
-                    "focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30",
-                    scrolled ? "h-10" : "h-11",
-                  )}
-                />
-              </form>
-
-              {focused && query.trim().length > 0 && (
-                <div className="animate-fade-in absolute left-0 right-0 top-full mt-2 overflow-hidden rounded-2xl border border-border/60 bg-background/95 shadow-[var(--shadow-glass)] backdrop-blur-xl">
-                  {suggestions.length === 0 ? (
-                    <div className="px-5 py-6 text-center text-sm text-muted-foreground">
-                      No matching results found.
-                    </div>
-                  ) : (
-                    <ul className="max-h-80 overflow-y-auto py-2">
-                      {suggestions.map((s, i) => (
-                        <li key={s.path}>
-                          <button
-                            type="button"
-                            onMouseEnter={() => setActiveIdx(i)}
-                            onClick={() => {
-                              navigate({ to: s.path });
-                              setFocused(false);
-                              setQuery("");
-                            }}
-                            className={cn(
-                              "flex w-full items-center justify-between gap-4 px-5 py-3 text-left text-sm transition-colors",
-                              i === activeIdx ? "bg-accent" : "hover:bg-accent/60",
-                            )}
-                          >
-                            <span className="truncate font-medium text-foreground">
-                              {s.label}
+            {focused && query.trim().length > 0 && (
+              <div className="animate-fade-in absolute left-0 right-0 top-full mt-2 overflow-hidden rounded-2xl border border-border/60 bg-background/95 shadow-[var(--shadow-glass)] backdrop-blur-xl">
+                {suggestions.length === 0 ? (
+                  <div className="px-5 py-6 text-center text-sm text-muted-foreground">
+                    No matching results found.
+                  </div>
+                ) : (
+                  <ul className="max-h-80 overflow-y-auto py-2">
+                    {suggestions.map((s, i) => (
+                      <li key={s.path}>
+                        <button
+                          type="button"
+                          onMouseEnter={() => setActiveIdx(i)}
+                          onClick={() => {
+                            navigate({ to: s.path });
+                            setFocused(false);
+                            setQuery("");
+                          }}
+                          className={cn(
+                            "flex w-full items-center justify-between gap-4 px-5 py-3 text-left text-sm transition-colors",
+                            i === activeIdx ? "bg-accent" : "hover:bg-accent/60",
+                          )}
+                        >
+                          <span className="truncate font-medium text-foreground">{s.label}</span>
+                          {s.category && (
+                            <span className="shrink-0 text-xs uppercase tracking-widest text-muted-foreground">
+                              {s.category}
                             </span>
-                            {s.category && (
-                              <span className="shrink-0 text-xs uppercase tracking-widest text-muted-foreground">
-                                {s.category}
-                              </span>
-                            )}
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              )}
-            </div>
-
-            {/* Right side intentionally minimal */}
-            <div className="hidden h-1 w-1 sm:block" aria-hidden />
+                          )}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            )}
           </div>
-        </header>
-      </div>
+        </div>
+      </header>
 
       {/* Drawer */}
       <NavDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} pathname={pathname} />
     </>
   );
 }
+
 
 function NavDrawer({
   open,
