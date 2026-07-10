@@ -114,16 +114,30 @@ export function Header() {
             )}
           </button>
 
-          {/* Logo */}
-          <Link to="/" className="flex shrink-0 items-center" aria-label="Wood Lab home">
+          {/* Logo + Brand */}
+          <Link to="/" className="flex shrink-0 items-center gap-2 sm:gap-3" aria-label="Wood Lab home">
             <img
               src={logo}
               alt="Wood Lab Islamabad logo"
+              decoding="async"
+              draggable={false}
+              style={{ imageRendering: "auto" }}
               className={cn(
-                "w-auto object-contain transition-all duration-300",
+                "w-auto object-contain transition-all duration-300 [image-rendering:auto]",
                 scrolled ? "h-[42px] sm:h-[46px]" : "h-[45px] sm:h-[52px]",
               )}
             />
+            <span className="hidden flex-col leading-tight sm:flex">
+              <span className="font-display text-xl font-bold tracking-tight text-foreground">
+                WoodLab
+              </span>
+              <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                {COMPANY.tagline}
+              </span>
+            </span>
+            <span className="font-display text-lg font-bold tracking-tight text-foreground sm:hidden">
+              WoodLab
+            </span>
           </Link>
 
           {/* Search */}
