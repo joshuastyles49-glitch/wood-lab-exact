@@ -9,38 +9,497 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WardrobeAccessoriesRouteImport } from './routes/wardrobe-accessories'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as KitchenAccessoriesRouteImport } from './routes/kitchen-accessories'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BookRouteImport } from './routes/book'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as WardrobesWalkInClosetRouteImport } from './routes/wardrobes.walk-in-closet'
+import { Route as WardrobesClassicWardrobeRouteImport } from './routes/wardrobes.classic-wardrobe'
+import { Route as WardrobesAluminiumWardrobeRouteImport } from './routes/wardrobes.aluminium-wardrobe'
+import { Route as KitchensModularKitchenRouteImport } from './routes/kitchens.modular-kitchen'
+import { Route as KitchensModernKitchenRouteImport } from './routes/kitchens.modern-kitchen'
+import { Route as KitchensClassicKitchenRouteImport } from './routes/kitchens.classic-kitchen'
+import { Route as KitchenAppliancesVattiRouteImport } from './routes/kitchen-appliances.vatti'
+import { Route as KitchenAppliancesRobamRouteImport } from './routes/kitchen-appliances.robam'
+import { Route as KitchenAppliancesFotileRouteImport } from './routes/kitchen-appliances.fotile'
+import { Route as KitchenAppliancesBoschRouteImport } from './routes/kitchen-appliances.bosch'
+import { Route as InteriorsWoodenFlooringRouteImport } from './routes/interiors.wooden-flooring'
+import { Route as InteriorsMediaWallsRouteImport } from './routes/interiors.media-walls'
+import { Route as InteriorsFeatureWallsRouteImport } from './routes/interiors.feature-walls'
+import { Route as InteriorsBedWallsRouteImport } from './routes/interiors.bed-walls'
+import { Route as HomeFurnituresWoodenRouteImport } from './routes/home-furnitures.wooden'
+import { Route as HomeFurnituresLaminatedRouteImport } from './routes/home-furnitures.laminated'
+import { Route as HomeFurnituresCushionRouteImport } from './routes/home-furnitures.cushion'
+import { Route as DoorsSlidingDoorsRouteImport } from './routes/doors.sliding-doors'
+import { Route as DoorsMainDoorsRouteImport } from './routes/doors.main-doors'
+import { Route as DoorsEngineeredDoorsRouteImport } from './routes/doors.engineered-doors'
+import { Route as DoorsBedBathroomDoorsRouteImport } from './routes/doors.bed-bathroom-doors'
 
+const WardrobeAccessoriesRoute = WardrobeAccessoriesRouteImport.update({
+  id: '/wardrobe-accessories',
+  path: '/wardrobe-accessories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KitchenAccessoriesRoute = KitchenAccessoriesRouteImport.update({
+  id: '/kitchen-accessories',
+  path: '/kitchen-accessories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WardrobesWalkInClosetRoute = WardrobesWalkInClosetRouteImport.update({
+  id: '/wardrobes/walk-in-closet',
+  path: '/wardrobes/walk-in-closet',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WardrobesClassicWardrobeRoute =
+  WardrobesClassicWardrobeRouteImport.update({
+    id: '/wardrobes/classic-wardrobe',
+    path: '/wardrobes/classic-wardrobe',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const WardrobesAluminiumWardrobeRoute =
+  WardrobesAluminiumWardrobeRouteImport.update({
+    id: '/wardrobes/aluminium-wardrobe',
+    path: '/wardrobes/aluminium-wardrobe',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const KitchensModularKitchenRoute = KitchensModularKitchenRouteImport.update({
+  id: '/kitchens/modular-kitchen',
+  path: '/kitchens/modular-kitchen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KitchensModernKitchenRoute = KitchensModernKitchenRouteImport.update({
+  id: '/kitchens/modern-kitchen',
+  path: '/kitchens/modern-kitchen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KitchensClassicKitchenRoute = KitchensClassicKitchenRouteImport.update({
+  id: '/kitchens/classic-kitchen',
+  path: '/kitchens/classic-kitchen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KitchenAppliancesVattiRoute = KitchenAppliancesVattiRouteImport.update({
+  id: '/kitchen-appliances/vatti',
+  path: '/kitchen-appliances/vatti',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KitchenAppliancesRobamRoute = KitchenAppliancesRobamRouteImport.update({
+  id: '/kitchen-appliances/robam',
+  path: '/kitchen-appliances/robam',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KitchenAppliancesFotileRoute = KitchenAppliancesFotileRouteImport.update({
+  id: '/kitchen-appliances/fotile',
+  path: '/kitchen-appliances/fotile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KitchenAppliancesBoschRoute = KitchenAppliancesBoschRouteImport.update({
+  id: '/kitchen-appliances/bosch',
+  path: '/kitchen-appliances/bosch',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InteriorsWoodenFlooringRoute = InteriorsWoodenFlooringRouteImport.update({
+  id: '/interiors/wooden-flooring',
+  path: '/interiors/wooden-flooring',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InteriorsMediaWallsRoute = InteriorsMediaWallsRouteImport.update({
+  id: '/interiors/media-walls',
+  path: '/interiors/media-walls',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InteriorsFeatureWallsRoute = InteriorsFeatureWallsRouteImport.update({
+  id: '/interiors/feature-walls',
+  path: '/interiors/feature-walls',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InteriorsBedWallsRoute = InteriorsBedWallsRouteImport.update({
+  id: '/interiors/bed-walls',
+  path: '/interiors/bed-walls',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeFurnituresWoodenRoute = HomeFurnituresWoodenRouteImport.update({
+  id: '/home-furnitures/wooden',
+  path: '/home-furnitures/wooden',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeFurnituresLaminatedRoute = HomeFurnituresLaminatedRouteImport.update({
+  id: '/home-furnitures/laminated',
+  path: '/home-furnitures/laminated',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeFurnituresCushionRoute = HomeFurnituresCushionRouteImport.update({
+  id: '/home-furnitures/cushion',
+  path: '/home-furnitures/cushion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DoorsSlidingDoorsRoute = DoorsSlidingDoorsRouteImport.update({
+  id: '/doors/sliding-doors',
+  path: '/doors/sliding-doors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DoorsMainDoorsRoute = DoorsMainDoorsRouteImport.update({
+  id: '/doors/main-doors',
+  path: '/doors/main-doors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DoorsEngineeredDoorsRoute = DoorsEngineeredDoorsRouteImport.update({
+  id: '/doors/engineered-doors',
+  path: '/doors/engineered-doors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DoorsBedBathroomDoorsRoute = DoorsBedBathroomDoorsRouteImport.update({
+  id: '/doors/bed-bathroom-doors',
+  path: '/doors/bed-bathroom-doors',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/book': typeof BookRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/kitchen-accessories': typeof KitchenAccessoriesRoute
+  '/projects': typeof ProjectsRoute
+  '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/wardrobe-accessories': typeof WardrobeAccessoriesRoute
+  '/doors/bed-bathroom-doors': typeof DoorsBedBathroomDoorsRoute
+  '/doors/engineered-doors': typeof DoorsEngineeredDoorsRoute
+  '/doors/main-doors': typeof DoorsMainDoorsRoute
+  '/doors/sliding-doors': typeof DoorsSlidingDoorsRoute
+  '/home-furnitures/cushion': typeof HomeFurnituresCushionRoute
+  '/home-furnitures/laminated': typeof HomeFurnituresLaminatedRoute
+  '/home-furnitures/wooden': typeof HomeFurnituresWoodenRoute
+  '/interiors/bed-walls': typeof InteriorsBedWallsRoute
+  '/interiors/feature-walls': typeof InteriorsFeatureWallsRoute
+  '/interiors/media-walls': typeof InteriorsMediaWallsRoute
+  '/interiors/wooden-flooring': typeof InteriorsWoodenFlooringRoute
+  '/kitchen-appliances/bosch': typeof KitchenAppliancesBoschRoute
+  '/kitchen-appliances/fotile': typeof KitchenAppliancesFotileRoute
+  '/kitchen-appliances/robam': typeof KitchenAppliancesRobamRoute
+  '/kitchen-appliances/vatti': typeof KitchenAppliancesVattiRoute
+  '/kitchens/classic-kitchen': typeof KitchensClassicKitchenRoute
+  '/kitchens/modern-kitchen': typeof KitchensModernKitchenRoute
+  '/kitchens/modular-kitchen': typeof KitchensModularKitchenRoute
+  '/wardrobes/aluminium-wardrobe': typeof WardrobesAluminiumWardrobeRoute
+  '/wardrobes/classic-wardrobe': typeof WardrobesClassicWardrobeRoute
+  '/wardrobes/walk-in-closet': typeof WardrobesWalkInClosetRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/book': typeof BookRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/kitchen-accessories': typeof KitchenAccessoriesRoute
+  '/projects': typeof ProjectsRoute
+  '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/wardrobe-accessories': typeof WardrobeAccessoriesRoute
+  '/doors/bed-bathroom-doors': typeof DoorsBedBathroomDoorsRoute
+  '/doors/engineered-doors': typeof DoorsEngineeredDoorsRoute
+  '/doors/main-doors': typeof DoorsMainDoorsRoute
+  '/doors/sliding-doors': typeof DoorsSlidingDoorsRoute
+  '/home-furnitures/cushion': typeof HomeFurnituresCushionRoute
+  '/home-furnitures/laminated': typeof HomeFurnituresLaminatedRoute
+  '/home-furnitures/wooden': typeof HomeFurnituresWoodenRoute
+  '/interiors/bed-walls': typeof InteriorsBedWallsRoute
+  '/interiors/feature-walls': typeof InteriorsFeatureWallsRoute
+  '/interiors/media-walls': typeof InteriorsMediaWallsRoute
+  '/interiors/wooden-flooring': typeof InteriorsWoodenFlooringRoute
+  '/kitchen-appliances/bosch': typeof KitchenAppliancesBoschRoute
+  '/kitchen-appliances/fotile': typeof KitchenAppliancesFotileRoute
+  '/kitchen-appliances/robam': typeof KitchenAppliancesRobamRoute
+  '/kitchen-appliances/vatti': typeof KitchenAppliancesVattiRoute
+  '/kitchens/classic-kitchen': typeof KitchensClassicKitchenRoute
+  '/kitchens/modern-kitchen': typeof KitchensModernKitchenRoute
+  '/kitchens/modular-kitchen': typeof KitchensModularKitchenRoute
+  '/wardrobes/aluminium-wardrobe': typeof WardrobesAluminiumWardrobeRoute
+  '/wardrobes/classic-wardrobe': typeof WardrobesClassicWardrobeRoute
+  '/wardrobes/walk-in-closet': typeof WardrobesWalkInClosetRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/book': typeof BookRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/kitchen-accessories': typeof KitchenAccessoriesRoute
+  '/projects': typeof ProjectsRoute
+  '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/wardrobe-accessories': typeof WardrobeAccessoriesRoute
+  '/doors/bed-bathroom-doors': typeof DoorsBedBathroomDoorsRoute
+  '/doors/engineered-doors': typeof DoorsEngineeredDoorsRoute
+  '/doors/main-doors': typeof DoorsMainDoorsRoute
+  '/doors/sliding-doors': typeof DoorsSlidingDoorsRoute
+  '/home-furnitures/cushion': typeof HomeFurnituresCushionRoute
+  '/home-furnitures/laminated': typeof HomeFurnituresLaminatedRoute
+  '/home-furnitures/wooden': typeof HomeFurnituresWoodenRoute
+  '/interiors/bed-walls': typeof InteriorsBedWallsRoute
+  '/interiors/feature-walls': typeof InteriorsFeatureWallsRoute
+  '/interiors/media-walls': typeof InteriorsMediaWallsRoute
+  '/interiors/wooden-flooring': typeof InteriorsWoodenFlooringRoute
+  '/kitchen-appliances/bosch': typeof KitchenAppliancesBoschRoute
+  '/kitchen-appliances/fotile': typeof KitchenAppliancesFotileRoute
+  '/kitchen-appliances/robam': typeof KitchenAppliancesRobamRoute
+  '/kitchen-appliances/vatti': typeof KitchenAppliancesVattiRoute
+  '/kitchens/classic-kitchen': typeof KitchensClassicKitchenRoute
+  '/kitchens/modern-kitchen': typeof KitchensModernKitchenRoute
+  '/kitchens/modular-kitchen': typeof KitchensModularKitchenRoute
+  '/wardrobes/aluminium-wardrobe': typeof WardrobesAluminiumWardrobeRoute
+  '/wardrobes/classic-wardrobe': typeof WardrobesClassicWardrobeRoute
+  '/wardrobes/walk-in-closet': typeof WardrobesWalkInClosetRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/book'
+    | '/contact'
+    | '/faq'
+    | '/kitchen-accessories'
+    | '/projects'
+    | '/services'
+    | '/sitemap.xml'
+    | '/wardrobe-accessories'
+    | '/doors/bed-bathroom-doors'
+    | '/doors/engineered-doors'
+    | '/doors/main-doors'
+    | '/doors/sliding-doors'
+    | '/home-furnitures/cushion'
+    | '/home-furnitures/laminated'
+    | '/home-furnitures/wooden'
+    | '/interiors/bed-walls'
+    | '/interiors/feature-walls'
+    | '/interiors/media-walls'
+    | '/interiors/wooden-flooring'
+    | '/kitchen-appliances/bosch'
+    | '/kitchen-appliances/fotile'
+    | '/kitchen-appliances/robam'
+    | '/kitchen-appliances/vatti'
+    | '/kitchens/classic-kitchen'
+    | '/kitchens/modern-kitchen'
+    | '/kitchens/modular-kitchen'
+    | '/wardrobes/aluminium-wardrobe'
+    | '/wardrobes/classic-wardrobe'
+    | '/wardrobes/walk-in-closet'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/book'
+    | '/contact'
+    | '/faq'
+    | '/kitchen-accessories'
+    | '/projects'
+    | '/services'
+    | '/sitemap.xml'
+    | '/wardrobe-accessories'
+    | '/doors/bed-bathroom-doors'
+    | '/doors/engineered-doors'
+    | '/doors/main-doors'
+    | '/doors/sliding-doors'
+    | '/home-furnitures/cushion'
+    | '/home-furnitures/laminated'
+    | '/home-furnitures/wooden'
+    | '/interiors/bed-walls'
+    | '/interiors/feature-walls'
+    | '/interiors/media-walls'
+    | '/interiors/wooden-flooring'
+    | '/kitchen-appliances/bosch'
+    | '/kitchen-appliances/fotile'
+    | '/kitchen-appliances/robam'
+    | '/kitchen-appliances/vatti'
+    | '/kitchens/classic-kitchen'
+    | '/kitchens/modern-kitchen'
+    | '/kitchens/modular-kitchen'
+    | '/wardrobes/aluminium-wardrobe'
+    | '/wardrobes/classic-wardrobe'
+    | '/wardrobes/walk-in-closet'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/book'
+    | '/contact'
+    | '/faq'
+    | '/kitchen-accessories'
+    | '/projects'
+    | '/services'
+    | '/sitemap.xml'
+    | '/wardrobe-accessories'
+    | '/doors/bed-bathroom-doors'
+    | '/doors/engineered-doors'
+    | '/doors/main-doors'
+    | '/doors/sliding-doors'
+    | '/home-furnitures/cushion'
+    | '/home-furnitures/laminated'
+    | '/home-furnitures/wooden'
+    | '/interiors/bed-walls'
+    | '/interiors/feature-walls'
+    | '/interiors/media-walls'
+    | '/interiors/wooden-flooring'
+    | '/kitchen-appliances/bosch'
+    | '/kitchen-appliances/fotile'
+    | '/kitchen-appliances/robam'
+    | '/kitchen-appliances/vatti'
+    | '/kitchens/classic-kitchen'
+    | '/kitchens/modern-kitchen'
+    | '/kitchens/modular-kitchen'
+    | '/wardrobes/aluminium-wardrobe'
+    | '/wardrobes/classic-wardrobe'
+    | '/wardrobes/walk-in-closet'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BookRoute: typeof BookRoute
+  ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
+  KitchenAccessoriesRoute: typeof KitchenAccessoriesRoute
+  ProjectsRoute: typeof ProjectsRoute
+  ServicesRoute: typeof ServicesRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  WardrobeAccessoriesRoute: typeof WardrobeAccessoriesRoute
+  DoorsBedBathroomDoorsRoute: typeof DoorsBedBathroomDoorsRoute
+  DoorsEngineeredDoorsRoute: typeof DoorsEngineeredDoorsRoute
+  DoorsMainDoorsRoute: typeof DoorsMainDoorsRoute
+  DoorsSlidingDoorsRoute: typeof DoorsSlidingDoorsRoute
+  HomeFurnituresCushionRoute: typeof HomeFurnituresCushionRoute
+  HomeFurnituresLaminatedRoute: typeof HomeFurnituresLaminatedRoute
+  HomeFurnituresWoodenRoute: typeof HomeFurnituresWoodenRoute
+  InteriorsBedWallsRoute: typeof InteriorsBedWallsRoute
+  InteriorsFeatureWallsRoute: typeof InteriorsFeatureWallsRoute
+  InteriorsMediaWallsRoute: typeof InteriorsMediaWallsRoute
+  InteriorsWoodenFlooringRoute: typeof InteriorsWoodenFlooringRoute
+  KitchenAppliancesBoschRoute: typeof KitchenAppliancesBoschRoute
+  KitchenAppliancesFotileRoute: typeof KitchenAppliancesFotileRoute
+  KitchenAppliancesRobamRoute: typeof KitchenAppliancesRobamRoute
+  KitchenAppliancesVattiRoute: typeof KitchenAppliancesVattiRoute
+  KitchensClassicKitchenRoute: typeof KitchensClassicKitchenRoute
+  KitchensModernKitchenRoute: typeof KitchensModernKitchenRoute
+  KitchensModularKitchenRoute: typeof KitchensModularKitchenRoute
+  WardrobesAluminiumWardrobeRoute: typeof WardrobesAluminiumWardrobeRoute
+  WardrobesClassicWardrobeRoute: typeof WardrobesClassicWardrobeRoute
+  WardrobesWalkInClosetRoute: typeof WardrobesWalkInClosetRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/wardrobe-accessories': {
+      id: '/wardrobe-accessories'
+      path: '/wardrobe-accessories'
+      fullPath: '/wardrobe-accessories'
+      preLoaderRoute: typeof WardrobeAccessoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kitchen-accessories': {
+      id: '/kitchen-accessories'
+      path: '/kitchen-accessories'
+      fullPath: '/kitchen-accessories'
+      preLoaderRoute: typeof KitchenAccessoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +507,189 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/wardrobes/walk-in-closet': {
+      id: '/wardrobes/walk-in-closet'
+      path: '/wardrobes/walk-in-closet'
+      fullPath: '/wardrobes/walk-in-closet'
+      preLoaderRoute: typeof WardrobesWalkInClosetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/wardrobes/classic-wardrobe': {
+      id: '/wardrobes/classic-wardrobe'
+      path: '/wardrobes/classic-wardrobe'
+      fullPath: '/wardrobes/classic-wardrobe'
+      preLoaderRoute: typeof WardrobesClassicWardrobeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/wardrobes/aluminium-wardrobe': {
+      id: '/wardrobes/aluminium-wardrobe'
+      path: '/wardrobes/aluminium-wardrobe'
+      fullPath: '/wardrobes/aluminium-wardrobe'
+      preLoaderRoute: typeof WardrobesAluminiumWardrobeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kitchens/modular-kitchen': {
+      id: '/kitchens/modular-kitchen'
+      path: '/kitchens/modular-kitchen'
+      fullPath: '/kitchens/modular-kitchen'
+      preLoaderRoute: typeof KitchensModularKitchenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kitchens/modern-kitchen': {
+      id: '/kitchens/modern-kitchen'
+      path: '/kitchens/modern-kitchen'
+      fullPath: '/kitchens/modern-kitchen'
+      preLoaderRoute: typeof KitchensModernKitchenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kitchens/classic-kitchen': {
+      id: '/kitchens/classic-kitchen'
+      path: '/kitchens/classic-kitchen'
+      fullPath: '/kitchens/classic-kitchen'
+      preLoaderRoute: typeof KitchensClassicKitchenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kitchen-appliances/vatti': {
+      id: '/kitchen-appliances/vatti'
+      path: '/kitchen-appliances/vatti'
+      fullPath: '/kitchen-appliances/vatti'
+      preLoaderRoute: typeof KitchenAppliancesVattiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kitchen-appliances/robam': {
+      id: '/kitchen-appliances/robam'
+      path: '/kitchen-appliances/robam'
+      fullPath: '/kitchen-appliances/robam'
+      preLoaderRoute: typeof KitchenAppliancesRobamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kitchen-appliances/fotile': {
+      id: '/kitchen-appliances/fotile'
+      path: '/kitchen-appliances/fotile'
+      fullPath: '/kitchen-appliances/fotile'
+      preLoaderRoute: typeof KitchenAppliancesFotileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kitchen-appliances/bosch': {
+      id: '/kitchen-appliances/bosch'
+      path: '/kitchen-appliances/bosch'
+      fullPath: '/kitchen-appliances/bosch'
+      preLoaderRoute: typeof KitchenAppliancesBoschRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/interiors/wooden-flooring': {
+      id: '/interiors/wooden-flooring'
+      path: '/interiors/wooden-flooring'
+      fullPath: '/interiors/wooden-flooring'
+      preLoaderRoute: typeof InteriorsWoodenFlooringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/interiors/media-walls': {
+      id: '/interiors/media-walls'
+      path: '/interiors/media-walls'
+      fullPath: '/interiors/media-walls'
+      preLoaderRoute: typeof InteriorsMediaWallsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/interiors/feature-walls': {
+      id: '/interiors/feature-walls'
+      path: '/interiors/feature-walls'
+      fullPath: '/interiors/feature-walls'
+      preLoaderRoute: typeof InteriorsFeatureWallsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/interiors/bed-walls': {
+      id: '/interiors/bed-walls'
+      path: '/interiors/bed-walls'
+      fullPath: '/interiors/bed-walls'
+      preLoaderRoute: typeof InteriorsBedWallsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home-furnitures/wooden': {
+      id: '/home-furnitures/wooden'
+      path: '/home-furnitures/wooden'
+      fullPath: '/home-furnitures/wooden'
+      preLoaderRoute: typeof HomeFurnituresWoodenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home-furnitures/laminated': {
+      id: '/home-furnitures/laminated'
+      path: '/home-furnitures/laminated'
+      fullPath: '/home-furnitures/laminated'
+      preLoaderRoute: typeof HomeFurnituresLaminatedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home-furnitures/cushion': {
+      id: '/home-furnitures/cushion'
+      path: '/home-furnitures/cushion'
+      fullPath: '/home-furnitures/cushion'
+      preLoaderRoute: typeof HomeFurnituresCushionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doors/sliding-doors': {
+      id: '/doors/sliding-doors'
+      path: '/doors/sliding-doors'
+      fullPath: '/doors/sliding-doors'
+      preLoaderRoute: typeof DoorsSlidingDoorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doors/main-doors': {
+      id: '/doors/main-doors'
+      path: '/doors/main-doors'
+      fullPath: '/doors/main-doors'
+      preLoaderRoute: typeof DoorsMainDoorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doors/engineered-doors': {
+      id: '/doors/engineered-doors'
+      path: '/doors/engineered-doors'
+      fullPath: '/doors/engineered-doors'
+      preLoaderRoute: typeof DoorsEngineeredDoorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doors/bed-bathroom-doors': {
+      id: '/doors/bed-bathroom-doors'
+      path: '/doors/bed-bathroom-doors'
+      fullPath: '/doors/bed-bathroom-doors'
+      preLoaderRoute: typeof DoorsBedBathroomDoorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BookRoute: BookRoute,
+  ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
+  KitchenAccessoriesRoute: KitchenAccessoriesRoute,
+  ProjectsRoute: ProjectsRoute,
+  ServicesRoute: ServicesRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  WardrobeAccessoriesRoute: WardrobeAccessoriesRoute,
+  DoorsBedBathroomDoorsRoute: DoorsBedBathroomDoorsRoute,
+  DoorsEngineeredDoorsRoute: DoorsEngineeredDoorsRoute,
+  DoorsMainDoorsRoute: DoorsMainDoorsRoute,
+  DoorsSlidingDoorsRoute: DoorsSlidingDoorsRoute,
+  HomeFurnituresCushionRoute: HomeFurnituresCushionRoute,
+  HomeFurnituresLaminatedRoute: HomeFurnituresLaminatedRoute,
+  HomeFurnituresWoodenRoute: HomeFurnituresWoodenRoute,
+  InteriorsBedWallsRoute: InteriorsBedWallsRoute,
+  InteriorsFeatureWallsRoute: InteriorsFeatureWallsRoute,
+  InteriorsMediaWallsRoute: InteriorsMediaWallsRoute,
+  InteriorsWoodenFlooringRoute: InteriorsWoodenFlooringRoute,
+  KitchenAppliancesBoschRoute: KitchenAppliancesBoschRoute,
+  KitchenAppliancesFotileRoute: KitchenAppliancesFotileRoute,
+  KitchenAppliancesRobamRoute: KitchenAppliancesRobamRoute,
+  KitchenAppliancesVattiRoute: KitchenAppliancesVattiRoute,
+  KitchensClassicKitchenRoute: KitchensClassicKitchenRoute,
+  KitchensModernKitchenRoute: KitchensModernKitchenRoute,
+  KitchensModularKitchenRoute: KitchensModularKitchenRoute,
+  WardrobesAluminiumWardrobeRoute: WardrobesAluminiumWardrobeRoute,
+  WardrobesClassicWardrobeRoute: WardrobesClassicWardrobeRoute,
+  WardrobesWalkInClosetRoute: WardrobesWalkInClosetRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
