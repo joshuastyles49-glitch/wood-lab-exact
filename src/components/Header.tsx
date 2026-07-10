@@ -291,7 +291,7 @@ function NavDrawer({
                       to={item.path}
                       onClick={onClose}
                       className={cn(
-                        "flex items-center rounded-xl px-4 py-3 font-display text-lg transition-colors",
+                        "flex items-center rounded-xl px-4 py-3 font-display text-lg font-semibold transition-colors",
                         active
                           ? "bg-accent text-foreground"
                           : "text-foreground/85 hover:bg-accent/60",
