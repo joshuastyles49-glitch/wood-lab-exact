@@ -313,7 +313,7 @@ function NavDrawer({
                     aria-expanded={isOpen}
                     onClick={() => setExpanded(isOpen ? null : item.label)}
                     className={cn(
-                      "flex w-full items-center justify-between rounded-xl px-4 py-3 font-display text-lg transition-colors",
+                      "flex w-full items-center justify-between rounded-xl px-4 py-3 font-display text-lg font-semibold transition-colors",
                       hasActive
                         ? "text-foreground"
                         : "text-foreground/85 hover:bg-accent/60",
