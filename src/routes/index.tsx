@@ -183,8 +183,12 @@ function Home() {
         </div>
       </Section>
 
+      {/* CERTIFIED & TRUSTED */}
+      <CertifiedSection />
+
       {/* SERVICES PREVIEW */}
       <Section className="bg-secondary/40">
+
         <SectionHeading
           eyebrow="What We Do"
           title="Our Signature Services"
