@@ -65,6 +65,8 @@ export const NAV_MENU: NavItem[] = [
   },
   { type: "link", label: "Kitchen Accessories", path: "/kitchen-accessories", keywords: ["kitchen", "accessories"] },
   { type: "link", label: "Wardrobe Accessories", path: "/wardrobe-accessories", keywords: ["wardrobe", "accessories"] },
+  { type: "link", label: "About Us", path: "/about", keywords: ["about", "us", "company", "story"] },
+  { type: "link", label: "Contact Us", path: "/contact", keywords: ["contact", "us", "phone", "email"] },
 ];
 
 export type SearchEntry = { label: string; path: string; category?: string; haystack: string };
