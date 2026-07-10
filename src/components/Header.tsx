@@ -132,7 +132,7 @@ export function Header() {
                 WoodLab
               </span>
               <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                {COMPANY.tagline}
+                Wood Lab Islamabad Pvt.Ltd
               </span>
             </span>
             <span className="font-display text-lg font-bold tracking-tight text-foreground sm:hidden">
