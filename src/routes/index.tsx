@@ -14,6 +14,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { ReviewsCarousel } from "@/components/ReviewsCarousel";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import { Section, SectionHeading } from "@/components/sections";
+import { CertifiedSection } from "@/components/CertifiedSection";
 
 export const Route = createFileRoute("/")({
   component: Home,
