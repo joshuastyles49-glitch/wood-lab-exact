@@ -1,20 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CategoryPage } from "@/components/CategoryPage";
+import { PremiumCategoryPage } from "@/components/PremiumCategoryPage";
+import { CATEGORIES } from "@/lib/category-data";
+
+const data = CATEGORIES["engineered-doors"];
 
 export const Route = createFileRoute("/doors/engineered-doors")({
   head: () => ({
     meta: [
-      { title: "Engineered Doors — Wood Lab Islamabad" },
-      { name: "description", content: "Engineered doors combining stability, sound insulation and premium veneered finishes." },
+      { title: data.metaTitle },
+      { name: "description", content: data.metaDescription },
+      { property: "og:title", content: data.metaTitle },
+      { property: "og:description", content: data.metaDescription },
+      { property: "og:image", content: data.heroImage },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: "/doors/engineered-doors" },
     ],
+    links: [{ rel: "canonical", href: "/doors/engineered-doors" }],
   }),
-  component: () => (
-    <CategoryPage
-      eyebrow="Doors"
-      title="Engineered Doors"
-      subtitle="Stable, quiet and beautifully finished — engineered for modern homes."
-      intro="Precision-built engineered doors pair a stable core with premium veneered surfaces to deliver silence, strength and a flawless finish over the long term."
-      highlights={["Dimensionally stable cores", "Premium veneered surfaces", "Improved sound insulation", "Consistent finish quality"]}
-    />
-  ),
+  component: () => <PremiumCategoryPage data={data} />,
 });

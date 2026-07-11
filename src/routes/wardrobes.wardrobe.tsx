@@ -1,20 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CategoryPage } from "@/components/CategoryPage";
+import { PremiumCategoryPage } from "@/components/PremiumCategoryPage";
+import { CATEGORIES } from "@/lib/category-data";
+
+// "Wardrobe" landing uses the classic wardrobe premium content.
+const data = CATEGORIES["classic-wardrobe"];
 
 export const Route = createFileRoute("/wardrobes/wardrobe")({
   head: () => ({
     meta: [
-      { title: "Wardrobes — Wood Lab Islamabad" },
-      { name: "description", content: "Bespoke wardrobes crafted with premium materials, tailored internal organisation and refined finishes." },
+      { title: "Wardrobes in Islamabad | Wood Lab" },
+      { name: "description", content: "Bespoke wardrobes in Islamabad — classic, aluminium and walk-in — designed and built by Wood Lab." },
+      { property: "og:title", content: "Wardrobes in Islamabad | Wood Lab" },
+      { property: "og:image", content: data.heroImage },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: "/wardrobes/wardrobe" },
     ],
+    links: [{ rel: "canonical", href: "/wardrobes/wardrobe" }],
   }),
-  component: () => (
-    <CategoryPage
-      eyebrow="Wardrobes"
-      title="Wardrobe"
-      subtitle="Bespoke wardrobes tailored to your space, style and storage needs."
-      intro="From sliding to hinged, matte to high-gloss — our wardrobes are engineered around your wardrobe collection with premium hardware, integrated lighting and refined finishes."
-      highlights={["Sliding & hinged configurations", "Integrated LED lighting", "Custom compartments & drawers", "Premium soft-close hardware"]}
-    />
-  ),
+  component: () => <PremiumCategoryPage data={data} />,
 });

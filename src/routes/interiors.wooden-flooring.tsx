@@ -1,20 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CategoryPage } from "@/components/CategoryPage";
+import { PremiumCategoryPage } from "@/components/PremiumCategoryPage";
+import { CATEGORIES } from "@/lib/category-data";
+
+const data = CATEGORIES["wooden-flooring"];
 
 export const Route = createFileRoute("/interiors/wooden-flooring")({
   head: () => ({
     meta: [
-      { title: "Wooden Flooring — Wood Lab Islamabad" },
-      { name: "description", content: "Premium engineered and solid wooden flooring in a range of tones and finishes." },
+      { title: data.metaTitle },
+      { name: "description", content: data.metaDescription },
+      { property: "og:title", content: data.metaTitle },
+      { property: "og:description", content: data.metaDescription },
+      { property: "og:image", content: data.heroImage },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: "/interiors/wooden-flooring" },
     ],
+    links: [{ rel: "canonical", href: "/interiors/wooden-flooring" }],
   }),
-  component: () => (
-    <CategoryPage
-      eyebrow="Interiors"
-      title="Wooden Flooring"
-      subtitle="Warm, timeless flooring engineered for modern living."
-      intro="Premium wooden flooring supplied and expertly installed — engineered stability with the natural depth and character of real timber."
-      highlights={["Engineered & solid options", "Wide-plank formats", "Matte, satin & oiled finishes", "Underlay & moisture protection"]}
-    />
-  ),
+  component: () => <PremiumCategoryPage data={data} />,
 });

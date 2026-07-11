@@ -1,20 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CategoryPage } from "@/components/CategoryPage";
+import { PremiumCategoryPage } from "@/components/PremiumCategoryPage";
+import { CATEGORIES } from "@/lib/category-data";
+
+const data = CATEGORIES["bed-bathroom-doors"];
 
 export const Route = createFileRoute("/doors/bed-bathroom-doors")({
   head: () => ({
     meta: [
-      { title: "Bed & Bathroom Doors — Wood Lab Islamabad" },
-      { name: "description", content: "Interior doors for bedrooms and bathrooms with elegant finishes and reliable hardware." },
+      { title: data.metaTitle },
+      { name: "description", content: data.metaDescription },
+      { property: "og:title", content: data.metaTitle },
+      { property: "og:description", content: data.metaDescription },
+      { property: "og:image", content: data.heroImage },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: "/doors/bed-bathroom-doors" },
     ],
+    links: [{ rel: "canonical", href: "/doors/bed-bathroom-doors" }],
   }),
-  component: () => (
-    <CategoryPage
-      eyebrow="Doors"
-      title="Bed & Bathroom Doors"
-      subtitle="Refined interior doors tuned for privacy, quiet and everyday elegance."
-      intro="Designed for daily use, our bedroom and bathroom doors combine acoustic comfort, moisture-safe finishes and refined detailing to complement any interior scheme."
-      highlights={["Moisture-resistant finishes", "Silent soft-close hinges", "Custom stains & lacquers", "Concealed hardware options"]}
-    />
-  ),
+  component: () => <PremiumCategoryPage data={data} />,
 });

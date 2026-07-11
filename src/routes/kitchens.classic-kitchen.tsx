@@ -1,20 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CategoryPage } from "@/components/CategoryPage";
+import { PremiumCategoryPage } from "@/components/PremiumCategoryPage";
+import { CATEGORIES } from "@/lib/category-data";
+
+const data = CATEGORIES["classic-kitchen"];
 
 export const Route = createFileRoute("/kitchens/classic-kitchen")({
   head: () => ({
     meta: [
-      { title: "Classic Kitchens — Wood Lab Islamabad" },
-      { name: "description", content: "Timeless classic kitchens with rich wood detailing, elegant profiles and premium finishes." },
+      { title: data.metaTitle },
+      { name: "description", content: data.metaDescription },
+      { property: "og:title", content: data.metaTitle },
+      { property: "og:description", content: data.metaDescription },
+      { property: "og:image", content: data.heroImage },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: "/kitchens/classic-kitchen" },
     ],
+    links: [{ rel: "canonical", href: "/kitchens/classic-kitchen" }],
   }),
-  component: () => (
-    <CategoryPage
-      eyebrow="Kitchens"
-      title="Classic Kitchen"
-      subtitle="Timeless craftsmanship with rich detailing and warm, enduring elegance."
-      intro="Classic kitchens designed with heritage profiles, carved detailing and warm hardwood tones — perfectly suited for homes that celebrate tradition and craftsmanship."
-      highlights={["Shaker & raised-panel profiles", "Solid wood detailing", "Hand-finished stains & polishes", "Premium brass & bronze fittings"]}
-    />
-  ),
+  component: () => <PremiumCategoryPage data={data} />,
 });
