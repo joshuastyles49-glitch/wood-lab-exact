@@ -1,20 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CategoryPage } from "@/components/CategoryPage";
+import { PremiumCategoryPage } from "@/components/PremiumCategoryPage";
+import { CATEGORIES } from "@/lib/category-data";
+
+const data = CATEGORIES["modular-kitchen"];
 
 export const Route = createFileRoute("/kitchens/modular-kitchen")({
   head: () => ({
     meta: [
-      { title: "Modular Kitchens — Wood Lab Islamabad" },
-      { name: "description", content: "Bespoke modular kitchens with premium finishes, smart storage and soft-close hardware." },
+      { title: data.metaTitle },
+      { name: "description", content: data.metaDescription },
+      { property: "og:title", content: data.metaTitle },
+      { property: "og:description", content: data.metaDescription },
+      { property: "og:image", content: data.heroImage },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: "/kitchens/modular-kitchen" },
     ],
+    links: [{ rel: "canonical", href: "/kitchens/modular-kitchen" }],
   }),
-  component: () => (
-    <CategoryPage
-      eyebrow="Kitchens"
-      title="Modular Kitchen"
-      subtitle="Precision-engineered modular kitchens tailored to your space and lifestyle."
-      intro="Our modular kitchens combine bespoke cabinetry, imported hardware and premium worktops to deliver a workspace that is beautiful, efficient and built to last."
-      highlights={["Handleless modular design", "Soft-close hinges & drawer runners", "Quartz & marble countertops", "Integrated lighting & appliances"]}
-    />
-  ),
+  component: () => <PremiumCategoryPage data={data} />,
 });

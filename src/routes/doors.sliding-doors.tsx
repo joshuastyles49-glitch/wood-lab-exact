@@ -1,20 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CategoryPage } from "@/components/CategoryPage";
+import { PremiumCategoryPage } from "@/components/PremiumCategoryPage";
+import { CATEGORIES } from "@/lib/category-data";
+
+const data = CATEGORIES["sliding-doors"];
 
 export const Route = createFileRoute("/doors/sliding-doors")({
   head: () => ({
     meta: [
-      { title: "Sliding Doors — Wood Lab Islamabad" },
-      { name: "description", content: "Space-saving sliding doors with smooth hardware and premium panels." },
+      { title: data.metaTitle },
+      { name: "description", content: data.metaDescription },
+      { property: "og:title", content: data.metaTitle },
+      { property: "og:description", content: data.metaDescription },
+      { property: "og:image", content: data.heroImage },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: "/doors/sliding-doors" },
     ],
+    links: [{ rel: "canonical", href: "/doors/sliding-doors" }],
   }),
-  component: () => (
-    <CategoryPage
-      eyebrow="Doors"
-      title="Sliding Doors"
-      subtitle="Effortless sliding systems that reclaim space and add architectural drama."
-      intro="From full-height room dividers to concealed cavity systems, our sliding doors glide effortlessly on premium hardware and complement any interior."
-      highlights={["Smooth top-hung systems", "Cavity & wall-mounted options", "Lacquered, veneered & glass panels", "Soft-close mechanisms"]}
-    />
-  ),
+  component: () => <PremiumCategoryPage data={data} />,
 });

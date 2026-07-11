@@ -1,20 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CategoryPage } from "@/components/CategoryPage";
+import { PremiumCategoryPage } from "@/components/PremiumCategoryPage";
+import { CATEGORIES } from "@/lib/category-data";
+
+const data = CATEGORIES["main-doors"];
 
 export const Route = createFileRoute("/doors/main-doors")({
   head: () => ({
     meta: [
-      { title: "Main Doors — Wood Lab Islamabad" },
-      { name: "description", content: "Grand entrance doors in solid hardwood with premium locks and rich detailing." },
+      { title: data.metaTitle },
+      { name: "description", content: data.metaDescription },
+      { property: "og:title", content: data.metaTitle },
+      { property: "og:description", content: data.metaDescription },
+      { property: "og:image", content: data.heroImage },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: "/doors/main-doors" },
     ],
+    links: [{ rel: "canonical", href: "/doors/main-doors" }],
   }),
-  component: () => (
-    <CategoryPage
-      eyebrow="Doors"
-      title="Main Doors"
-      subtitle="Grand entrances crafted from solid hardwood with precision joinery."
-      intro="Our main doors set the tone for the entire home — solid hardwood construction, custom stains and premium hardware for a truly grand first impression."
-      highlights={["Solid hardwood cores", "Custom grain & carving", "High-security locking systems", "Weather-sealed finishing"]}
-    />
-  ),
+  component: () => <PremiumCategoryPage data={data} />,
 });

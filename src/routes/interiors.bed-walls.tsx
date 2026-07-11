@@ -1,20 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CategoryPage } from "@/components/CategoryPage";
+import { PremiumCategoryPage } from "@/components/PremiumCategoryPage";
+import { CATEGORIES } from "@/lib/category-data";
+
+const data = CATEGORIES["bed-walls"];
 
 export const Route = createFileRoute("/interiors/bed-walls")({
   head: () => ({
     meta: [
-      { title: "Bed Walls — Wood Lab Islamabad" },
-      { name: "description", content: "Luxury bed walls and headboards with panelling, upholstery and accent lighting." },
+      { title: data.metaTitle },
+      { name: "description", content: data.metaDescription },
+      { property: "og:title", content: data.metaTitle },
+      { property: "og:description", content: data.metaDescription },
+      { property: "og:image", content: data.heroImage },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: "/interiors/bed-walls" },
     ],
+    links: [{ rel: "canonical", href: "/interiors/bed-walls" }],
   }),
-  component: () => (
-    <CategoryPage
-      eyebrow="Interiors"
-      title="Bed Walls"
-      subtitle="Sculpted bed walls that anchor the bedroom in quiet luxury."
-      intro="Full-height bed walls combining panelled joinery, upholstered accents and integrated lighting to create a truly hotel-grade bedroom moment."
-      highlights={["Panelled timber joinery", "Upholstered headboard inserts", "Integrated bedside lighting", "Concealed niches & storage"]}
-    />
-  ),
+  component: () => <PremiumCategoryPage data={data} />,
 });

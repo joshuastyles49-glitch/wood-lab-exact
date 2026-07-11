@@ -1,20 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CategoryPage } from "@/components/CategoryPage";
+import { PremiumCategoryPage } from "@/components/PremiumCategoryPage";
+import { CATEGORIES } from "@/lib/category-data";
+
+const data = CATEGORIES["modern-kitchen"];
 
 export const Route = createFileRoute("/kitchens/modern-kitchen")({
   head: () => ({
     meta: [
-      { title: "Modern Kitchens — Wood Lab Islamabad" },
-      { name: "description", content: "Contemporary handleless kitchens with sleek finishes, smart storage and integrated appliances." },
+      { title: data.metaTitle },
+      { name: "description", content: data.metaDescription },
+      { property: "og:title", content: data.metaTitle },
+      { property: "og:description", content: data.metaDescription },
+      { property: "og:image", content: data.heroImage },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: "/kitchens/modern-kitchen" },
     ],
+    links: [{ rel: "canonical", href: "/kitchens/modern-kitchen" }],
   }),
-  component: () => (
-    <CategoryPage
-      eyebrow="Kitchens"
-      title="Modern Kitchen"
-      subtitle="Sleek, minimal and engineered for a truly contemporary lifestyle."
-      intro="Clean lines, seamless finishes and intelligent storage — our modern kitchens are designed to feel effortless while performing beautifully every day."
-      highlights={["Handleless push-to-open design", "Matte & high-gloss lacquers", "Integrated appliance columns", "Concealed LED task lighting"]}
-    />
-  ),
+  component: () => <PremiumCategoryPage data={data} />,
 });

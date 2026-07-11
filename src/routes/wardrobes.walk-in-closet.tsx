@@ -1,20 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CategoryPage } from "@/components/CategoryPage";
+import { PremiumCategoryPage } from "@/components/PremiumCategoryPage";
+import { CATEGORIES } from "@/lib/category-data";
+
+const data = CATEGORIES["walk-in-closet"];
 
 export const Route = createFileRoute("/wardrobes/walk-in-closet")({
   head: () => ({
     meta: [
-      { title: "Walk-in Closets — Wood Lab Islamabad" },
-      { name: "description", content: "Luxury walk-in closets designed like private boutiques with tailored storage and feature lighting." },
+      { title: data.metaTitle },
+      { name: "description", content: data.metaDescription },
+      { property: "og:title", content: data.metaTitle },
+      { property: "og:description", content: data.metaDescription },
+      { property: "og:image", content: data.heroImage },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: "/wardrobes/walk-in-closet" },
     ],
+    links: [{ rel: "canonical", href: "/wardrobes/walk-in-closet" }],
   }),
-  component: () => (
-    <CategoryPage
-      eyebrow="Wardrobes"
-      title="Walk-in Closet"
-      subtitle="A boutique dressing room built exclusively around you."
-      intro="From island storage to glass display cabinets and feature lighting — every walk-in closet is designed as a private, curated retreat."
-      highlights={["Central dressing islands", "Glass display units", "Concealed & feature lighting", "Custom shoe, bag & jewellery zones"]}
-    />
-  ),
+  component: () => <PremiumCategoryPage data={data} />,
 });
