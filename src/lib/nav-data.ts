@@ -19,6 +19,7 @@ export const NAV_MENU: NavItem[] = [
     type: "group",
     label: "Wardrobes",
     children: [
+      { label: "Wardrobe", path: "/wardrobes/wardrobe", keywords: ["wardrobe"] },
       { label: "Classic Wardrobe", path: "/wardrobes/classic-wardrobe", keywords: ["classic", "wardrobe"] },
       { label: "Aluminium Wardrobe", path: "/wardrobes/aluminium-wardrobe", keywords: ["aluminium", "aluminum", "wardrobe"] },
       { label: "Walk-in Closet", path: "/wardrobes/walk-in-closet", keywords: ["walk-in", "closet", "walkin"] },

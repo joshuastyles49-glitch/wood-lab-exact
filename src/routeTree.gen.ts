@@ -19,6 +19,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BookRouteImport } from './routes/book'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as WardrobesWardrobeRouteImport } from './routes/wardrobes.wardrobe'
 import { Route as WardrobesWalkInClosetRouteImport } from './routes/wardrobes.walk-in-closet'
 import { Route as WardrobesClassicWardrobeRouteImport } from './routes/wardrobes.classic-wardrobe'
 import { Route as WardrobesAluminiumWardrobeRouteImport } from './routes/wardrobes.aluminium-wardrobe'
@@ -89,6 +90,11 @@ const AboutRoute = AboutRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WardrobesWardrobeRoute = WardrobesWardrobeRouteImport.update({
+  id: '/wardrobes/wardrobe',
+  path: '/wardrobes/wardrobe',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WardrobesWalkInClosetRoute = WardrobesWalkInClosetRouteImport.update({
@@ -231,6 +237,7 @@ export interface FileRoutesByFullPath {
   '/wardrobes/aluminium-wardrobe': typeof WardrobesAluminiumWardrobeRoute
   '/wardrobes/classic-wardrobe': typeof WardrobesClassicWardrobeRoute
   '/wardrobes/walk-in-closet': typeof WardrobesWalkInClosetRoute
+  '/wardrobes/wardrobe': typeof WardrobesWardrobeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -264,6 +271,7 @@ export interface FileRoutesByTo {
   '/wardrobes/aluminium-wardrobe': typeof WardrobesAluminiumWardrobeRoute
   '/wardrobes/classic-wardrobe': typeof WardrobesClassicWardrobeRoute
   '/wardrobes/walk-in-closet': typeof WardrobesWalkInClosetRoute
+  '/wardrobes/wardrobe': typeof WardrobesWardrobeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -298,6 +306,7 @@ export interface FileRoutesById {
   '/wardrobes/aluminium-wardrobe': typeof WardrobesAluminiumWardrobeRoute
   '/wardrobes/classic-wardrobe': typeof WardrobesClassicWardrobeRoute
   '/wardrobes/walk-in-closet': typeof WardrobesWalkInClosetRoute
+  '/wardrobes/wardrobe': typeof WardrobesWardrobeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -333,6 +342,7 @@ export interface FileRouteTypes {
     | '/wardrobes/aluminium-wardrobe'
     | '/wardrobes/classic-wardrobe'
     | '/wardrobes/walk-in-closet'
+    | '/wardrobes/wardrobe'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -366,6 +376,7 @@ export interface FileRouteTypes {
     | '/wardrobes/aluminium-wardrobe'
     | '/wardrobes/classic-wardrobe'
     | '/wardrobes/walk-in-closet'
+    | '/wardrobes/wardrobe'
   id:
     | '__root__'
     | '/'
@@ -399,6 +410,7 @@ export interface FileRouteTypes {
     | '/wardrobes/aluminium-wardrobe'
     | '/wardrobes/classic-wardrobe'
     | '/wardrobes/walk-in-closet'
+    | '/wardrobes/wardrobe'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -433,6 +445,7 @@ export interface RootRouteChildren {
   WardrobesAluminiumWardrobeRoute: typeof WardrobesAluminiumWardrobeRoute
   WardrobesClassicWardrobeRoute: typeof WardrobesClassicWardrobeRoute
   WardrobesWalkInClosetRoute: typeof WardrobesWalkInClosetRoute
+  WardrobesWardrobeRoute: typeof WardrobesWardrobeRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -505,6 +518,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/wardrobes/wardrobe': {
+      id: '/wardrobes/wardrobe'
+      path: '/wardrobes/wardrobe'
+      fullPath: '/wardrobes/wardrobe'
+      preLoaderRoute: typeof WardrobesWardrobeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/wardrobes/walk-in-closet': {
@@ -689,6 +709,7 @@ const rootRouteChildren: RootRouteChildren = {
   WardrobesAluminiumWardrobeRoute: WardrobesAluminiumWardrobeRoute,
   WardrobesClassicWardrobeRoute: WardrobesClassicWardrobeRoute,
   WardrobesWalkInClosetRoute: WardrobesWalkInClosetRoute,
+  WardrobesWardrobeRoute: WardrobesWardrobeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
